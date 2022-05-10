@@ -8,17 +8,18 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/logo_main"
         android:layout_width="321dp"
         android:layout_height="100dp"
         android:layout_marginTop="40dp"
+        android:contentDescription="TODO"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/tredgate___z_kladn__slogan__1_" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/username_field"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="92dp"
@@ -26,17 +27,22 @@
         android:ems="10"
         android:hint="Zadej uživatelské jméno"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         android:paddingLeft="5dp"
         android:paddingTop="10dp"
         android:paddingRight="5dp"
         android:paddingBottom="10dp"
+        android:textColor="@color/black"
+        android:textColorHighlight="@color/tredgate_blue"
+        android:textColorHint="@color/light_gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/logo_main"
+        tools:ignore="TextContrastCheck" />
 
     <EditText
-        android:id="@+id/editTextNumberPassword"
+        android:id="@+id/pin_field"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
@@ -44,42 +50,62 @@
         android:ems="10"
         android:hint="Zadej PIN"
         android:inputType="numberPassword"
+        android:minHeight="48dp"
         android:paddingLeft="5dp"
         android:paddingTop="10dp"
         android:paddingRight="5dp"
         android:paddingBottom="10dp"
+        android:textColor="@color/black"
+        android:textColorHighlight="@color/tredgate_blue"
+        android:textColorHint="@color/light_gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/username_field"
+        tools:ignore="TextContrastCheck" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/username_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Username"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName" />
+        app:layout_constraintBottom_toTopOf="@+id/username_field"
+        app:layout_constraintStart_toStartOf="@+id/username_field" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/pin_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="PIN"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/editTextNumberPassword"
-        app:layout_constraintStart_toStartOf="@+id/editTextNumberPassword" />
+        app:layout_constraintBottom_toTopOf="@+id/pin_field"
+        app:layout_constraintStart_toStartOf="@+id/pin_field" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/submit_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
         android:text="Prihlasit"
+        android:textColor="#1A237E"
         app:backgroundTint="@color/tredgate_bluegreen"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/error_msg_text"
+        app:layout_constraintVertical_bias="0.111" />
+
+    <TextView
+        android:id="@+id/error_msg_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Špatně zadané uživatelské jméno nebo heslo!"
+        android:textColor="#FF0000"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pin_field" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
