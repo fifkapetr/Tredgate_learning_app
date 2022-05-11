@@ -54,7 +54,9 @@ public class LoggedUser extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Log.d(tredgate, "Change pin button click()");
-                throw new RuntimeException("Error, function not implemented");
+//                throw new RuntimeException("Error, function not implemented");
+                Intent intent = new Intent(getApplicationContext(), ChangePassword.class);
+                startActivity(intent);
             }
         });
 

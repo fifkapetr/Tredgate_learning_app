@@ -14,4 +14,12 @@ public class ExampleUnitTest {
     public void addition_isCorrect() {
         assertEquals(4, 2 + 2);
     }
+
+    @Test
+    public void temp() {
+        String number = "123456";
+        String text = "12345678";
+        int number2 = 1234;
+        System.out.println(number.matches("\\d{6,6}")); ////regex: "\\d+{6,6}";
+    }
 }
