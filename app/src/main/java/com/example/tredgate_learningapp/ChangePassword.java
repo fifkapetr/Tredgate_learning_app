@@ -47,13 +47,13 @@ public class ChangePassword extends AppCompatActivity {
     private boolean validatePin(String oldPin, String newPin, String confirmedPin) {
         boolean validated = false;
         if (!oldPin.equals("123456")) {
-            validationMsg = "Stávající PIN není správný";
+            validationMsg = "The current PIN is incorrect";
         } else if (oldPin.equals(newPin)) {
             validationMsg = "Stávající PIN je shodný s novým PIN";
         } else if (!confirmedPin.equals(newPin)) {
-            validationMsg = "Nový PIN není shodný s potvrzeným PIN";
+            validationMsg = "The current PIN is the same as the new PIN";
         } else if (!newPin.matches("\\d{6,6}")) {
-            validationMsg = "Nový PIN není číslo nebo nemá 6 čísel";
+            validationMsg = "The new PIN is not a number or has 6 numbers";
         } else {
             validated = true;
         }

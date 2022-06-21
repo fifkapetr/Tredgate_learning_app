@@ -79,14 +79,14 @@ public class LoggedUser extends AppCompatActivity {
             public void onClick(View view) {
                 nothingClicked++;
                 if(nothingClicked == 1) {
-                    nothingButton.setText("NIC NEDĚLÁM...");
+                    nothingButton.setText("DON'T TOUCH ME...");
                 }
                 else if(nothingClicked == 3)
                     Toast.makeText(getApplicationContext(), "DEBUG: marná snaha, nic nedělám, neklikej na mě!", Toast.LENGTH_LONG).show();
                 else if(nothingClicked == 6)
                 {
                     nothingButton.setBackgroundColor(getResources().getColor(R.color.red));
-                    nothingButton.setText("!!!NIC NEDĚLÁM!!!");
+                    nothingButton.setText("!!!DONT EVEN TRY!!!");
                 }
                 else if (nothingClicked == 9){
                     nothingButton.setVisibility(View.INVISIBLE);
