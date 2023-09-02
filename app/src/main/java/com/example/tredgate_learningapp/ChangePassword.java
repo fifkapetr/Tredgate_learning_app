@@ -48,6 +48,15 @@ public class ChangePassword extends AppCompatActivity {
                 }
             }
         });
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+                throw new RuntimeException("Error: Layout state sync failed");
+            }
+        });
     }
 
     private boolean validatePin(String oldPin, String newPin, String confirmedPin) {
