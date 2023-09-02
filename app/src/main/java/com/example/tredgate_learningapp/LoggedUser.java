@@ -63,6 +63,7 @@ public class LoggedUser extends AppCompatActivity {
         toastButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Log.d(tredgate, "Toast message debug displayed");
                 Toast.makeText(getApplicationContext(), "DEBUG: toto je toast", Toast.LENGTH_LONG).show();
             }
         });
@@ -90,6 +91,7 @@ public class LoggedUser extends AppCompatActivity {
                 }
                 else if (nothingClicked == 9){
                     nothingButton.setVisibility(View.INVISIBLE);
+                    Log.d(tredgate, "easter egg :)");
                 }
             }
         });
