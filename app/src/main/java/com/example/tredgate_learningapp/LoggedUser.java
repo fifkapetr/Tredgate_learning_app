@@ -18,6 +18,8 @@ public class LoggedUser extends AppCompatActivity {
     private Button toastButton;
     private Button nothingButton;
     private Button logdButton;
+
+    private Button pushNotificationButton;
     public static int nothingClicked = 0;
 
     @Override
@@ -31,33 +33,19 @@ public class LoggedUser extends AppCompatActivity {
         toastButton = findViewById(R.id.toast_msg_button);
         nothingButton = findViewById(R.id.nothing_button);
         logdButton = findViewById(R.id.logd_button);
+        pushNotificationButton = findViewById(R.id.push_notification_button);
 
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d(tredgate, "Logout successful");
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
-            }
+        logout.setOnClickListener(view -> {
+            Log.d(tredgate, "Logout successful");
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intent);
         });
 
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d(tredgate, "Logout successful");
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        changePin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d(tredgate, "Change pin button click()");
+        changePin.setOnClickListener(view -> {
+            Log.d(tredgate, "Change pin button click()");
 //                throw new RuntimeException("Error, function not implemented");
-                Intent intent = new Intent(getApplicationContext(), ChangePassword.class);
-                startActivity(intent);
-            }
+            Intent intent = new Intent(getApplicationContext(), ChangePassword.class);
+            startActivity(intent);
         });
 
         toastButton.setOnClickListener(new View.OnClickListener() {
@@ -93,6 +81,14 @@ public class LoggedUser extends AppCompatActivity {
                     nothingButton.setVisibility(View.INVISIBLE);
                     Log.d(tredgate, "easter egg :)");
                 }
+            }
+        });
+
+        pushNotificationButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MyNotificationManager myNotificationManager = new MyNotificationManager(LoggedUser.this);
+                myNotificationManager.sendNotification();
             }
         });
     }
