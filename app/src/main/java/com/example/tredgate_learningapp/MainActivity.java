@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.google.firebase.FirebaseApp;
@@ -28,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
     private String pinValue;
     private String tredgate;
 
+    private RelativeLayout webviewAnchor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         FirebaseApp.initializeApp(this);
@@ -39,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         username = findViewById(R.id.username_field);
         pin = findViewById(R.id.pin_field);
         err_msg = findViewById(R.id.error_msg_text);
+        webviewAnchor = findViewById(R.id.webview_anchor_layout);
 
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,6 +64,10 @@ public class MainActivity extends AppCompatActivity {
                 }
 
             }
+        });
+        webviewAnchor.setOnClickListener( view -> {
+            Intent intent = new Intent(getApplicationContext(), WebViewActivity.class);
+            startActivity(intent);
         });
     }
 }
