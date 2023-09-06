@@ -19,6 +19,8 @@ public class LoggedUser extends AppCompatActivity {
     private Button nothingButton;
     private Button logdButton;
 
+    private Button weatherButton;
+
     private Button pushNotificationButton;
     public static int nothingClicked = 0;
 
@@ -34,6 +36,7 @@ public class LoggedUser extends AppCompatActivity {
         nothingButton = findViewById(R.id.nothing_button);
         logdButton = findViewById(R.id.logd_button);
         pushNotificationButton = findViewById(R.id.push_notification_button);
+        weatherButton = findViewById(R.id.weather_button);
 
         logout.setOnClickListener(view -> {
             Log.d(tredgate, "Logout successful");
@@ -89,6 +92,16 @@ public class LoggedUser extends AppCompatActivity {
             public void onClick(View view) {
                 MyNotificationManager myNotificationManager = new MyNotificationManager(LoggedUser.this);
                 myNotificationManager.sendNotification();
+            }
+        });
+
+        weatherButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d(tredgate, "Weather button click()");
+//                throw new RuntimeException("Error, function not implemented");
+                Intent intent = new Intent(getApplicationContext(), WeatherActivity.class);
+                startActivity(intent);
             }
         });
     }

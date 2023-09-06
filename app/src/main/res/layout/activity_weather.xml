@@ -1,0 +1,79 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Buttons -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/backButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Zpět"/>
+
+            <Button
+                android:id="@+id/refreshButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Aktualizuj"
+                style="?android:attr/buttonBarButtonStyle" />
+
+        </LinearLayout>
+
+        <!-- Location -->
+        <TextView
+            android:id="@+id/weatherLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Město:"
+            android:textSize="24sp"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Temperature -->
+        <TextView
+            android:id="@+id/weatherTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Teplota:"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Add more TextViews for additional weather information -->
+        <!-- Weather Description -->
+        <TextView
+            android:id="@+id/weatherDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Popis:"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Humidity -->
+        <TextView
+            android:id="@+id/weatherHumidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vlhkost:"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Wind Speed -->
+        <TextView
+            android:id="@+id/weatherWindSpeed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rychlost větru:"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp"/>
+    </LinearLayout>
+</ScrollView>
